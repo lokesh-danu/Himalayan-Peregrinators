@@ -3,11 +3,11 @@ import React from 'react'
 function Blog() {
   return (
     <div className='cnt p-4'>
-      <h2 className='text-center m-4'
+      <h2 className='text-center m-4 font-handd manner'
       >Himalaya - An Arena of Escapades</h2>
       <hr />
-      <div className="blogBody m-10">
-        <p>A mega tectonic event that had diligently and surreptitiously simmered for millennia,
+      <div className="blogBody m-10 font-sans text-xl">
+        <p className=''>A mega tectonic event that had diligently and surreptitiously simmered for millennia,
           propelled an itinerant landmass (Indian plate) towards present day’s Asia on a sluggish
           time scale. In due course, this drifting gargantuan earth plate fueled by a monomania to
           explore the possibility of unique creation, collided eventually with unimaginable force

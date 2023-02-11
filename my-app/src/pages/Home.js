@@ -1,6 +1,7 @@
 import React from 'react'
 import bg from '../img/bg.jpg';
 import Navbar from '../components/Navbar';
+
 function Home() {
   return (
     <>
