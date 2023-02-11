@@ -52,10 +52,10 @@ function Navbar() {
           <div className="navBtn">
             What Sets us Apart
           </div>
-          <div className="navBtn">
+          {/* <div className="navBtn">
             What is Himalaya
 
-          </div>
+          </div> */}
           <div className="navBtn relative" onMouseEnter={e => {
             setActflag(true);
           }}
