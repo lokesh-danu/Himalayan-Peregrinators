@@ -1,15 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
-
+import { Link } from 'react-router-dom'
 function Navbar() {
   const [flag, setFlag] = useState(false);
   const [actflag ,setActflag]=useState(false);
   return (
     <>
-      <nav className='nav px-3  justify-between  bg-black/90  md:px-6 lg:px-10'>
-          <div className="navBtn">
+      <nav className='nav'>
+        <header className='h-3/5 bg-black/70'>
+
+        </header>
+        <div className='h-2/5 bg-black/90 flex '>
+        <Link className="navBtn" to='/'>
             Our Story 
-          </div>
+          </Link>
           <div className="navBtn">
             What Sets us Apart
           </div>
@@ -30,7 +34,7 @@ function Navbar() {
                 <div>Trekking</div>
                 <div>Himalayan Wildlife</div>
                 <div>Angling</div>
-                <div>RIver Rafting</div>
+                <div>River Rafting</div>
                 <div>Agro Touris,</div>
                 <div>Young Tourism</div>
                 <div>Pilgrimmage</div>
@@ -48,7 +52,7 @@ function Navbar() {
           >
           <span>Team</span>
           
-          <div className={`overlay ${flag ? '' : 'scale-y-0'}  duration-500 ease-in-out origin-top`}>
+          <div className={`overlay ${flag ? '' : 'scale-y-0 scale-x-0'}  duration-500 ease-in-out origin-top`}>
                 <span>Ramesh</span>
                 <span>Neha</span>
                 <span>David</span>
@@ -59,9 +63,9 @@ function Navbar() {
           <div className="navBtn">
             Sustainaibility
           </div>
-          <div className="navBtn">
+          <Link className="navBtn" to='/blog'>
             Blog
-          </div>
+          </Link>
           <div className="navBtn">
             Gallery
           </div>
@@ -69,6 +73,7 @@ function Navbar() {
             Social Media
           </div>
           
+        </div>
       </nav>
     </>
   )

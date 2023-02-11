@@ -32,6 +32,9 @@ font-family: 'Roboto', sans-serif; */
     p{
         @apply font-roboto text-lg lg:text-2xl
     }
+    span{
+        @apply font-roboto text-lg lg:text-2xl
+    }
     .btnRectangle{
         @apply flex items-center font-roboto text-xl md:text-xl lg:text-2xl w-fit px-3 py-1 lg:py-2 rounded-md;
     }
@@ -45,13 +48,13 @@ font-family: 'Roboto', sans-serif; */
         @apply text-lg m-2 border-2 rounded-md px-4 py-2 md:text-xl lg:text-3xl;
     }
     .nav{
-        @apply h-[6vh] lg:h-[8vh] flex sticky w-screen top-0 pt-5;
+        @apply h-[20vh] lg:h-[20vh] flex flex-col sticky w-screen top-0;
     }
     .cnt{
-        @apply h-[94vh] w-screen lg:h-[92vh]
+        @apply h-[100vh] w-screen lg:h-[80vh]
     }
     .navBtn{
-      @apply text-white flex flex-col items-center flex-nowrap space-x-2 font-roboto lg:text-2xl w-fit px-2 rounded-3xl hover:text-black hover:bg-slate-50;
+      @apply text-white flex flex-col items-center flex-nowrap space-x-2 font-roboto lg:text-2xl w-fit  my-2 rounded-3xl hover:text-black hover:bg-slate-50;
     }
     .overlay{
          @apply flex flex-col text-black  bg-slate-50 w-full px-4 py-2 rounded-3xl transition translate-y-2 ease-in-out delay-500; 
