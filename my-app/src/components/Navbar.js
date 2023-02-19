@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <>
       <nav className='nav '>
-        <header className='h-3/5 bg-lime-500/70 flex items-center justify-between'>
+        <header className='h-3/5  flex items-center justify-between'>
           <div className='h-full flex mx-4 items-center' >
             <img src={logo} alt="" className='h-3/4 mx-4 ' />
             <div className='flex flex-col ' >
@@ -21,17 +21,14 @@ function Navbar() {
               {/* <span className='text-amber-300 font-hand text-sm' > Adventuring with the best ....</span> */}
             </div>
           </div>
-          {/* <div>
-            <FcGallery className='text-6xl'></FcGallery>
-            <span>gallery</span>
-          </div> */}
+          
           <div className='flex h-full items-center'>
             <div className='flex'>
               <Link to='/' className='text-4xl m-2 text-red-600 hover:scale-125 '><BsInstagram></BsInstagram></Link>
               <Link to='/' className='text-4xl m-2 text-blue-600 hover:scale-125'><BsFacebook></BsFacebook></Link>
-              {/* <Link to='/'></Link> */}
-              {/* <Link to='/'></Link> */}
+              
             </div>
+
             <div className='flex flex-col'>
               <div className='text-sm flex items-center'>
                 <FiPhoneCall className='m-2' ></FiPhoneCall>
@@ -43,9 +40,9 @@ function Navbar() {
               </div>
             </div>
           </div>
-
         </header>
-        <div className='h-2/5 bg-black/90 flex justify-between items-center'>
+
+        <div className='h-2/5 bg-black/90 flex justify-center items-center'>
           <Link className="navBtn" to='/'>
             Our Story
           </Link>
@@ -101,9 +98,9 @@ function Navbar() {
           <Link className="navBtn" to='/blog'>
             Blog
           </Link>
-          <div className="navBtn">
+          {/* <div className="navBtn">
             Gallery
-          </div>
+          </div> */}
           {/* <div className="navBtn">
             Social Media
           </div> */}
