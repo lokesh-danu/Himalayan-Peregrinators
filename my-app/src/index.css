@@ -48,7 +48,7 @@ font-family: 'Roboto', sans-serif; */
         @apply text-lg m-2 border-2 rounded-md px-4 py-2 md:text-xl lg:text-3xl;
     }
     .nav{
-        @apply h-[18vh] lg:h-[18vh] flex flex-col fixed w-screen top-0;
+        @apply h-[15vh] lg:h-[15vh] flex fixed justify-between w-screen top-0 ;
     }
     .cnt{
         @apply h-[100vh] w-screen lg:h-[80vh]
@@ -66,6 +66,12 @@ font-family: 'Roboto', sans-serif; */
         @apply  px-3 py-1 text-lg rounded-sm hover:text-lime-500 hover:transition hover:ease-in-out ;
     }
     .home{
-        @apply before:content-none 
+        @apply before:content-none ;
+    }
+    .card{
+        @apply flex items-start justify-center rounded-lg m-3 bg-cover shadow-lg shadow-black hover:scale-110 hover:transition ease-in-out duration-500;
+    }
+    .activities-card-title{
+        @apply text-3xl text-black font-lora
     }
 }
