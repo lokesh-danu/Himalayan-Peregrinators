@@ -1,11 +1,32 @@
 import React, { useState } from 'react';
-import { CgClose } from 'react-icons/cg'
+import axios from 'axios';
+import { CgClose } from 'react-icons/cg';
+// import useEmail from './useEmail';
 export const Modal = ({ children, closeModal }) => {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [querry, setQuerry] = useState();
+    const [ispending, setIspending] = useState(false);
+    const [state, setState] = useState();
     const enquire=()=>{
-
+        setIspending(true);
+        axios({
+            method:'post',
+            url:`http://localhost:5000/api/email`,
+            data:{
+                email:email,
+                subject:'testing_123',
+                des:querry
+            }
+        }).then(res=>{
+            console.log(res);
+            setIspending(false);
+            window.alert(`your request has been registered successfully we will get back to you`);
+        }).catch(err=>{
+            console.log(err);
+            window.alert(`server error . please try again later ${err}`);
+        })
+        
     }
     return (
         <div className="h-screen w-screen fixed top-0 flex items-center justify-center bg-blue-200/75">
@@ -38,7 +59,7 @@ export const Modal = ({ children, closeModal }) => {
                         onChange={(e) => setFile(e.target.files[0])}
                     /> */}
                     <button className='m-auto ring-2 mt-4  border-none ring-blue-500 ring-offset-2 hover:bg-lime-400 '
-                        >Enquire now</button>
+                       onClick={enquire} >Enquire now</button>
                 </form>
                 
             </div>
