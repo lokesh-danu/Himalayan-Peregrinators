@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Satisfy&display=swap');
+
+
 /* font-family: 'Indie Flower', cursive;
 font-family: 'Lora', serif;
 font-family: 'Noto Sans', sans-serif;
@@ -48,7 +50,7 @@ font-family: 'Roboto', sans-serif; */
         @apply text-lg m-2 border-2 rounded-md px-4 py-2 md:text-xl lg:text-2xl;
     }
     .nav{
-        @apply h-[15vh] lg:h-[15vh] flex fixed justify-between w-screen top-0 ;
+        @apply  h-[10vh] xl:h-[15vh] lg:h-[15vh] flex fixed justify-between w-screen top-0 ;
     }
     .cnt{
         @apply h-[100vh] w-screen lg:h-[80vh]

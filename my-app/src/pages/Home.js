@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Activities from '../components/Activities';
 import { Link as scroll } from 'react-scroll';
+import Blog from '../components/Blog';
 function Home() {
   const [anchor, setAnchor] = useState();
   const [showModal, setShowModal] = useState(false);
@@ -42,9 +43,9 @@ function Home() {
 
   return (
     <>
-      <div className="btnRectangle fixed bottom-4 right-4 h-10 w-fit bg-yellow-400"
+      <div className="btnRectangle fixed bottom-8 right-6 h-10 w-fit bg-lime-400 outline-2 outline-offset-2 outline-amber-500 outline hover:scale-125 transition-all ease-in-out duration-200"
         onClick={open}>
-        <span>ENquiree Now</span>
+        <span>Enquire Now</span>
       </div>
       {
         showModal &&
@@ -101,6 +102,7 @@ function Home() {
         </button>
       </div>
       <Activities id='activities' open={open} ></Activities>
+      <Blog></Blog>
       <div className="w-screen flex flex-col items-center justify-center py-4 px-8">
         {/* team */}
         <h3 className='font-lora my-8'>Meet our Team</h3>
