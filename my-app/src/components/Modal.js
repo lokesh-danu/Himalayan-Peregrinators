@@ -29,15 +29,15 @@ export const Modal = ({ children, closeModal }) => {
         
     }
     return (
-        <div className="h-screen w-screen fixed top-0 flex items-center justify-center bg-blue-200/75">
+        <div className=" h-screen w-screen fixed top-0 flex items-center justify-center bg-blue-200/75">
             <div className=" drop-shadow-xl py-8 rounded-md h-fit w-fit lg:w-2/5 bg-white flex items-center justify-center">
                 <button onClick={closeModal}
-                    className="text-xl absolute right-2 top-2">
+                    className=" absolute right-2 top-2">
                     <CgClose></CgClose>
                 </button>
                 <form className='mt-2 items-stretch h-fit text-gray-700' >
                     <input type="text"
-                        placeholder='name'
+                        placeholder='your-name'
                         value={name}
                         onChange={e => { setName(e.target.value) }}
                     />
@@ -48,7 +48,7 @@ export const Modal = ({ children, closeModal }) => {
                     />
                     <textarea name="discription" id="" placeholder='Discription for request'
                         value={querry} onChange={e => { setQuerry(e.target.value) }}
-                        className="min-h-[10vh]"
+                        className="min-h-[15vh]"
                     >
 
                     </textarea>

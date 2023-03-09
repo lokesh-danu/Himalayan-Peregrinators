@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useRef, useEffect, useState } from 'react';
 import bg from '../img/bg4.png';
 import Navbar from '../components/Navbar';
@@ -13,7 +13,7 @@ import home5 from '../img/home5.JPG'
 import { FiPhoneCall } from 'react-icons/fi'
 import { SiMinutemailer } from 'react-icons/si'
 import { FcGallery } from 'react-icons/fc'
-import { BsInstagram, BsFacebook } from 'react-icons/bs'
+import { BsInstagram, BsFacebook, BsPersonCircle } from 'react-icons/bs'
 import { Modal } from '../components/Modal';
 // import home6 from '../img/home6.JPG'
 import { Link } from 'react-router-dom';
@@ -23,7 +23,7 @@ import { Link as scroll } from 'react-scroll';
 function Home() {
   const [anchor, setAnchor] = useState();
   const [showModal, setShowModal] = useState(false);
-
+  const team = ['neha', 'ramesh', 'david', 'jagdeep', 'meenakshi', 'ajay', 'aniket', 'abhishek'];
   useEffect(() => {
     setAnchor(document.querySelector('#activities'));
 
@@ -36,13 +36,16 @@ function Home() {
     // navigate(`/register`);
   }
 
-  const open = ()=>{
+  const open = () => {
     setShowModal(true);
   }
 
   return (
     <>
-      {/* <Navbar></Navbar> */}
+      <div className="btnRectangle fixed bottom-4 right-4 h-10 w-fit bg-yellow-400"
+        onClick={open}>
+        <span>ENquiree Now</span>
+      </div>
       {
         showModal &&
         <Modal closeModal={closeModal}>
@@ -60,7 +63,7 @@ function Home() {
 
         </div>
 
-        <div className='homeGallery mt-4 flex items-center justify-center'>
+        {/* <div className='homeGallery mt-4 flex items-center justify-center'>
           <Carousel
             autoPlay={true} emulateTouch={true} infiniteLoop={true} showThumbs={false}
             className='w-[600px] h-[400px]'
@@ -87,7 +90,7 @@ function Home() {
 
           </Carousel>
 
-        </div>
+        </div> */}
 
       </div>
 
@@ -98,43 +101,60 @@ function Home() {
         </button>
       </div>
       <Activities id='activities' open={open} ></Activities>
-      <div className="h-[100vh]">
-        <section className='h-[80vh]' id='home2'>
-          <div className='flex flex-col place-content-center'>
-            {/* activities container */}
-            <div className='bg-slate-500 h-[30vh] w-[25vw] rounded-lg m-2'>
-              {/* activies container  */}
+      <div className="w-screen flex flex-col items-center justify-center py-4 px-8">
+        {/* team */}
+        <h3 className='font-lora my-8'>Meet our Team</h3>
+        <div className='py-8 w-screen flex flex-wrap justify-center'>
+          {
+            team.map(el => {
+              return (
+                <div className=' mx-8 my-4 flex-col flex items-center'>
+                  <BsPersonCircle className='text-9xl'></BsPersonCircle>
+                  <span className='text-2xl m-2'>{el}</span>
+                  <span>designamtion</span>
+                </div>
+              )
+            })
+          }
+        </div>
 
+        <footer id='footer' className="footer bg-black/90 h-[30vh] w-screen
+          flex px-8 justify-around items-center">
+          <div className='flex flex-col' >
+            <Link to='/' className='text-white'>About us</Link>
+            <Link to='/' className='text-white'>About us</Link>
+            <Link to='/' className='text-white'>About us</Link>
+            <Link to='/' className='text-white'>About us</Link>
+            <Link to='/' className='text-white'>About us</Link>
+
+          </div>
+          <div className="flex flex-col">
+
+            <div className='flex m-4'>
+              <Link to='/' className='text-4xl m-2 text-red-600 hover:scale-125 '><BsInstagram></BsInstagram></Link>
+              <Link to='/' className='text-4xl m-2 text-blue-600 hover:scale-125'><BsFacebook></BsFacebook></Link>
 
             </div>
-            <div className='bg-slate-500 h-[30vh] w-[25vw] rounded-lg'>
-              {/* activies container  */}
 
-
+            <div className='flex flex-col text-white'>
+              <div className='text-sm flex items-center'>
+                <FiPhoneCall className='m-2' ></FiPhoneCall>
+                <span className='text-sm'>+91-123456789</span>
+              </div>
+              <div className='text-sm flex items-center'>
+                <SiMinutemailer className='m-2'></SiMinutemailer>
+                <span className='text-sm'>company@example.com</span>
+              </div>
             </div>
           </div>
-        </section>
-        <footer id='footer' className="footer bg-blue-900 h-[20vh]">
-          <div>
-            <div className='flex h-full items-center'>
-              <div className='flex'>
-                <Link to='/' className='text-4xl m-2 text-red-600 hover:scale-125 '><BsInstagram></BsInstagram></Link>
-                <Link to='/' className='text-4xl m-2 text-blue-600 hover:scale-125'><BsFacebook></BsFacebook></Link>
-
-              </div>
-
-              <div className='flex flex-col'>
-                <div className='text-sm flex items-center'>
-                  <FiPhoneCall className='m-2' ></FiPhoneCall>
-                  <span className='text-sm'>+91-123456789</span>
-                </div>
-                <div className='text-sm flex items-center'>
-                  <SiMinutemailer className='m-2'></SiMinutemailer>
-                  <span className='text-sm'>company@example.com</span>
-                </div>
-              </div>
-            </div>
+          <div className='flex flex-col'>
+            <Link to='/' className="text-white">Resources</Link>
+            <Link to='/' className="text-white">Resources</Link>
+            <Link to='/' className="text-white">Resources</Link>
+            <Link to='/' className="text-white">Resources</Link>
+            <Link to='/' className="text-white">Resources</Link>
           </div>
+
 
         </footer>
       </div>
@@ -143,3 +163,5 @@ function Home() {
 }
 
 export default Home
+
+{/* */ }
