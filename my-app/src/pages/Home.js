@@ -43,7 +43,7 @@ function Home() {
 
   return (
     <>
-      <div className="btnRectangle fixed bottom-8 right-6 h-10 w-fit bg-lime-400 outline-2 outline-offset-2 outline-amber-500 outline hover:scale-125 transition-all ease-in-out duration-200"
+      <div className="btnRectangle fixed bottom-8 right-32 xl:right-6 h-10 w-fit bg-lime-400 outline-2 outline-offset-2 outline-amber-500 outline hover:scale-125 transition-all ease-in-out duration-200"
         onClick={open}>
         <span>Enquire Now</span>
       </div>
@@ -57,7 +57,7 @@ function Home() {
         style={{ backgroundImage: `url(${bg})` }}
       >
 
-        <div className='flex flex-col  h-1/3'>
+        <div className='flex flex-col   xl:h-1/3'>
           <h2 className='text-projectBlue' >Himalayan</h2>
           <h2 className='text-amber-300' >Peregrinators</h2>
           <span className='text-amber-300 ' > Adventuring with the best ....</span>
@@ -95,12 +95,13 @@ function Home() {
 
       </div>
 
-      <div className='absolute bottom-10 right-[42%] flex-col items-center flex ' >
+      <div className='hidden absolute bottom-10 right-[42%] flex-col items-center flex ' >
         <span className='text-projectBlue text-4xl mb-3'> Activities</span>
         <button onClick={e => { console.log(anchor); anchor.scrollIntoView({ behavior: 'smooth', block: 'center' }) }} >
           <BsFillArrowDownCircleFill className='text-amber-500 text-7xl'></BsFillArrowDownCircleFill>
         </button>
       </div>
+
       <Activities id='activities' open={open} ></Activities>
       <Blog></Blog>
       <div className="w-screen flex flex-col items-center justify-center py-4 px-8">
