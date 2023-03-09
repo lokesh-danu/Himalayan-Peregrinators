@@ -17,7 +17,7 @@ function Navbar() {
       <nav className='nav flex'>
         
         {/* hamburger menu  */}
-        <button className='text-white text-3xl m-4 md:hidden '
+        <button className='text-projectBlue text-3xl m-4 md:hidden '
           onClick={e => {
             setMenu(!menu);
           }} >
