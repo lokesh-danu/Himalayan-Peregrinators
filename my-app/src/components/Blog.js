@@ -24,7 +24,7 @@ function Blog() {
     //     });
   }, [])
   const allPost = [
-    { title: "title 1", discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit blanditiis esse non soluta quasi, cumque reprehenderit quibusdam ab placeat libero magnam in, dicta labore! Ut, possimus et magni accusamus iure similique libero.", userName: "skdjbhk" },
+    { title: "title 1", discription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit blanditiis esse non soluta quasi, cumque reprehenderit quibusdam ab placeat libero magnam in, dicta labore! Ut, possimus et magni accusamus iure similique libero. Ut, possimus et magni accusamus iure similique libero. Ut, possimus et magni accusamus iure similique libero. Ut, possimus et magni accusamus iure similique libero. Ut, possimus et magni accusamus iure similique libero. Ut, possimus et magni accusamus iure similique libero. Ut, possimus et magni accusamus iure similique libero.Ut, possimus et magni accusamus iure similique libero.", userName: "skdjbhk" },
     { title: "title 2", discription: "ajdgshvfaidskhgv", userName: "skdjbhk" },
     { title: "title 3", discription: "ajdgshvfaidskhgv", userName: "skdjbhk" },
     { title: "title 4", discription: "ajdgshvfaidskhgv", userName: "skdjbhk" },
@@ -44,29 +44,31 @@ function Blog() {
   }
 
   return (
-    <div className='h-screen pt-10 bg-no-repeat bg-cover'
+    <div className=' h-screen w-screen pt-10 bg-no-repeat bg-cover pb-8'
     style={{ backgroundImage: `url(${bg})` }}
     >
       <h3 className='text-center m-8 font-hand text-white'> Featured Blogs</h3>
-
-      <div className='flex relative items-center'>
-      <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={200} />
+      
+      <div className='flex relative items-center h-3/4 w-full'>
+      <MdChevronLeft className='opacity-70 text-white cursor-pointer hover:opacity-100' onClick={slideLeft} size={200} />
         
-        <div id='slider' className='w-fit h-[400px] flex  overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
+        <div id='slider' className='w-fit h-full flex overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
         >
           {allPost.map(el => {
             return (
-              <div className='rounded-lg w-[30vw] m-4 p-4 bg-white border-none shadow-xl'>
-                <Link to={`/blog/${el._id}`} className="" key={el.title}>
+              <div key={el.title+el.userName}  className='rounded-lg m-4 p-4 bg-white border-none shadow-xl'>
+                <Link to={`/blog/${el._id}`} className="" >
                   <h3 className='text-center' >{el.title}</h3>
-                  <p className='w-10/12 h-fit ' >{el.discription}</p>
+                  <hr />
+                  <p className='pt-4 w-[70vw] lg:w-[30vw] whitespace-normal overflow-scroll scrollbar-hide h-3/4' >{el.discription}</p>
+                  <br />
                   <span className='' >~by:{el.userName}</span>
                 </Link>
               </div>
             )
           })}
         </div>
-        <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={200} />
+        <MdChevronRight className='opacity-50  text-white cursor-pointer hover:opacity-100' onClick={slideRight} size={200} />
       </div>
 
     </div>

@@ -24,15 +24,15 @@ function Navbar() {
           <i className="fa-solid fa-bars "></i>
         </button>
 
-        <div className=' flex  items-center xl:mx-4  xl:w-8' >  {/*company logo*/}
+        <div className=' flex  items-center absolute h-full right-0 md:static md:p-6' >  {/*company logo*/}
           <img src={logo} alt="" className='h-3/4 mx-4 ' />
-          <div className='flex flex-col hidden ' >
+          <div className='flex-col flex invisible w-0 lg:visible ' >
             <span className='text-[#40E0D0] font-hand text-3xl' >Himalayan</span>
             <span className='text-amber-300 font-hand text-3xl' >peregrinators</span>
           </div>
         </div>
 
-        <div className='flex items-center hidden'>
+        <div className='flex items-center invisible md:visible '>
           <Link className="navBtn" to='/'>
             Our Story
           </Link>
@@ -87,7 +87,9 @@ function Navbar() {
         </div>
 
       </nav>
-      <div className={`fixed top-0 py-4 md:hidden  bg-black w-[60vw] h-full opacity-95 
+
+      {/* hamruger menu contents */}
+      <div className={`z-10 fixed top-0 py-4 md:hidden  bg-black w-[60vw] h-full opacity-95 
             ${menu ? 'translate-x-0' : 'translate-x-[-25rem] '} ease-in-out duration-500`}
       >
         <button className='absolute right-4 text-white text-3xl md:hidden '

@@ -131,7 +131,7 @@ function Home() {
             <Link to='/' className='text-white'>About us</Link>
 
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col hidden lg:block ">
 
             <div className='flex m-4'>
               <Link to='/' className='text-4xl m-2 text-red-600 hover:scale-125 '><BsInstagram></BsInstagram></Link>
