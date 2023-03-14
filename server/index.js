@@ -5,6 +5,8 @@ const emailRoute= require('./routes/email');
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
+
+/*
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -26,7 +28,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
+*/
 app.use('/api/email',emailRoute);
 
 app.listen(Port, () => {
