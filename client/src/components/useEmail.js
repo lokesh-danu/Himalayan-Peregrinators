@@ -2,7 +2,7 @@ import axios from 'axios';
 export default function useEmail(email,subject,des){
     axios({
         method:'post',
-        url:`http://localhost:5000/api/email`,
+        url:`https://54.254.162.138:5000/api/email`,
         data:{
             email:email,
             subject:subject,

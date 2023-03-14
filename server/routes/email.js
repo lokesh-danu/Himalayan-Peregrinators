@@ -8,6 +8,10 @@ const transporter =nodemailer.createTransport({
         pass:"Lokesh@21022001"
     }
 });
+router.get('/',async(req,res)=>{
+    console.log(req.url);
+    res.send("success");
+})
 router.post('/',async(req,res)=>{
     console.log(req.body);
     const mailOptions ={
