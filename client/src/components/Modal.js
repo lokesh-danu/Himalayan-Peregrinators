@@ -13,11 +13,12 @@ export const Modal = ({ children, closeModal }) => {
     const [ispending, setIspending] = useState(false);
     const [state, setState] = useState();
     const [phone, setPhone] = useState();
-    const enquire=()=>{
+    const enquire=(e)=>{
+        
         setIspending(true);
         axios({
             method:'post',
-            url:`http://localhost:5000/api/email`,
+            url:`https://dan-server.onrender.com/api/email`,
             data:{
                 email:email,
                 subject:'testing_123',
@@ -26,12 +27,14 @@ export const Modal = ({ children, closeModal }) => {
             }
         }).then(res=>{
             console.log(res);
+            // window.alert(res);
             setIspending(false);
-            window.alert(`your request has been registered successfully we will get back to you`);
+            // window.alert(`your request has been registered successfully we will get back to you`);
         }).catch(err=>{
             console.log(err);
-            window.alert(`server error . please try again later ${err}`);
+            // window.alert(`server error . please try again later ${err}`);
         })
+        closeModal();
         
     }
     return (
@@ -98,7 +101,7 @@ export const Modal = ({ children, closeModal }) => {
                     /> */}
                     <div className='flex items-center justify-center pt-2' >
                         <button className='mx-3 my-2 ring-2  rounded-xl p-2  ring-blue-500 ring-offset-2 border-slate-300 border-2 hover:scale-110 ease-in-out duration-300 transition hover:bg-yellow-300 '
-                        onClick={enquire} >Enquire now</button>
+                        onClick={e=>{ e.preventDefault();enquire();}} >Enquire now</button>
                         <button className='mx-3 my-2 ring-2  rounded-xl p-2  ring-red-500 ring-offset-2 border-slate-300 border-2 hover:scale-110 ease-in-out duration-300 transition hover:bg-red-800 hover:text-white'
                         onClick={closeModal} >GO Back</button>
 

@@ -10,7 +10,7 @@ const transporter =nodemailer.createTransport({
 });
 router.get('/',async(req,res)=>{
     console.log(req.url);
-    res.send("success");
+    res.send(`${req.url}+success`);
 })
 router.post('/',async(req,res)=>{
     console.log(req.body);
